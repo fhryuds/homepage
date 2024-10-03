@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>火焰技术阁的主页</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+           <img src="head.png" alt="头像" class="avatar">
+            <h1>flameix.top</h1>
+            <p class="greeting">Hello World!</p>
+            <p class="quote">“生命如意志永存，青春永远遥轻。” - 「安讯七句」</p>
+        </div>
+        <div class="time">
+            <span id="current-time"></span>
+            <span id="current-date"></span>
+        </div>
+        </div>
+        <div class="icon-links">
+            <a href="https://blog.flameix.top" class="icon">
+               <img src="blog.png" alt="博客">博客
+</a>
+            <a href="https://dh.flameix.top" class="icon">
+             <img src="dh.png" alt="导航站">导航站
+</a>
+            <a href="https://share.flameix.top" class="icon">
+               <img src="share.png" alt="实用干货">实用干货
+</a>
+        </div>
+    </div>
+    <script>
+        function updateTime() {
+            const now = new Date();
+            const timeString = now.toLocaleTimeString('zh-CN', { hour12: false });
+            const dateString = now.toLocaleDateString('zh-CN', { weekday: 'long', year: 'numeric', month: 'numeric', day: 'numeric' });
+            document.getElementById('current-time').textContent = timeString;
+            document.getElementById('current-date').textContent = dateString;
+        }
+        setInterval(updateTime, 1000);
+        updateTime();
+    </script>
+</body>
+</html>
+
